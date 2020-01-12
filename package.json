@@ -1,0 +1,11 @@
+{
+  "name": "reviewdb-data",
+  "version": "1.0.0",
+  "description": "The data access layer for reviewdb to be shared between applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ajay Bhasy",
+  "license": "MIT"
+}
