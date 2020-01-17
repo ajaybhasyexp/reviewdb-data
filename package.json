@@ -1,3 +1,4 @@
+
 {
   "name": "reviewdb-data",
   "version": "1.0.0",
@@ -7,5 +8,8 @@
     "test": "test"
   },
   "author": "Ajay Bhasy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.8.7"
+  }
 }
