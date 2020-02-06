@@ -4,12 +4,10 @@ const ecommerceVendor = require('../ecommercevendor');
 const ImageUrl = require('./imageurl');
 
 const ecommerceSchema = new Schema({
-    providerId: Schema.Types.ObjectId,
+    providerId: String,
     providerName: String,
     url: String,
-    providerprice: Number,
-    providerimage: ImageUrl,
-    providerId: String,
+    providerprice: Number,        
     inStock: Boolean
 });
 

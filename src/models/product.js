@@ -17,7 +17,8 @@ const productSchema = new Schema({
     imageUrl: String,
     createdBy: [ActionUser],
     category: [CategoryRef],
-    ecommerceDetails: [EcommerceDetails]
+    ecommerceDetails: [EcommerceDetails],
+    maximumRetailPrice: Number
 
 });
 module.exports = mongoose.model('Product', productSchema);
