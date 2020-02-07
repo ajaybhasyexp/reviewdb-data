@@ -6,7 +6,7 @@ module.exports.saveProduct = (product) => {
 }
 
 module.exports.getProduct = (search) => {
-    return Product.find({ "name": new RegExp(search, 'i') }).exec();
+    return Product.find({ "name": new RegExp(search, 'i') }).limit(5);
 }
 
 module.exports.getAllProducts = () => {
