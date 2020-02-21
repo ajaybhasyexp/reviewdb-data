@@ -18,7 +18,23 @@ const productSchema = new Schema({
     createdBy: [ActionUser],
     category: [CategoryRef],
     ecommerceDetails: [EcommerceDetails],
-    maximumRetailPrice: Number
+    maximumRetailPrice: Number,
+    sourceId: String,
+    updated: Date
 
 });
-module.exports = mongoose.model('Product', productSchema);
+
+const ProductModel = mongoose.model('Product', productSchema);
+
+// productSchema.pre('save', function (next) {
+//     var self = this;
+//     ProductModel.find({ sourceId: self.sourceId }, function (err, docs) {
+//         if (!docs.length) {
+//             next();
+//         } else {
+//             console.log('product exists: ', self.name);
+//             next(new Error("product exists!"));
+//         }
+//     });
+// });
+module.exports = ProductModel;

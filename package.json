@@ -9,6 +9,6 @@
   "author": "Ajay Bhasy",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "^5.8.9"
+    "mongoose": "^5.9.1"
   }
 }

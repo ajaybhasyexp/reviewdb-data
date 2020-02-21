@@ -19,6 +19,7 @@ const categorySchema = new Schema({
     },
     sourceUrl: String,
     sourceId: String,
+    updated: Date
 });
 
 module.exports = mongoose.model('Category', categorySchema);

@@ -6,6 +6,7 @@ module.exports.getAllCategories = async () => {
 
 module.exports.saveCategory = (category) => {
     var cat = new Category(category);
+    cat.updated = new Date();
     cat.save();
 }
 
@@ -17,6 +18,7 @@ module.exports.checkAndSaveCategory = (category) => {
             }
             else {
                 cat.sourceUrl = category.sourceUrl;
+                cat.updated = new Date();
                 cat.save();
             }
         });
