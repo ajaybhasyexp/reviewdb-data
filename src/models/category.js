@@ -13,7 +13,7 @@ const categorySchema = new Schema({
         type: Schema.Types.Map,
         of: String
     },
-    ecommerceLinks: [keyValue],
+    ecommerceLinks: Object,
     source: {
         type: String, required: true
     },

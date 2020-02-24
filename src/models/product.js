@@ -15,12 +15,12 @@ const productSchema = new Schema({
         required: true
     },
     imageUrl: String,
-    createdBy: [ActionUser],
-    category: [CategoryRef],
-    ecommerceDetails: [EcommerceDetails],
+    createdBy: Object,
+    category: Object,
+    ecommerceDetails: Object,
     maximumRetailPrice: Number,
     sourceId: String,
-    updated: Date
+    updated: { type: Date, default: new Date() }
 
 });
 

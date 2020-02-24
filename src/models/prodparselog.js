@@ -5,7 +5,8 @@ const prodParseLog = new Schema({
     vendorId: String,
     data: String,
     dataUrl: String,
-    error: Object
+    error: Object,
+    errorDesc: String
 });
 
 module.exports = mongoose.model('prodparselogs', prodParseLog);
