@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 const CategoryService = require('./src/services/categoryService');
 const ProductService = require('./src/services/productService');
 const ProdParseLogService = require('./src/services/prodParserLogService');
+const UserService = require('./src/services/userService');
 const EComVendor = require('./src/models/ecommercevendor');
 const Category = require('./src/models/category');
 
@@ -15,6 +16,7 @@ module.exports.createConnection = (connection) => {
 module.exports.CategoryService = CategoryService;
 module.exports.ProductService = ProductService;
 module.exports.ProdParseLogService = ProdParseLogService;
+module.exports.UserService = UserService;
 
 
 module.exports.getEcommerceVendor = (vendor) => {
