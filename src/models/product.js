@@ -15,6 +15,8 @@ const productSchema = new Schema({
         required: true
     },
     imageUrl: String,
+    image_400: String,
+    image_800: String,
     createdBy: Object,
     category: Object,
     ecommerceDetails: Object,
