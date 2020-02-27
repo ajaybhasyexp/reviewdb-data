@@ -59,8 +59,15 @@ module.exports.saveProduct = (product) => {
     }
 }
 
-module.exports.getProduct = (search) => {
-    return Product.find({ "name": new RegExp(search, 'i') }).limit(5);
+module.exports.getProductByName = (search) => {
+    return Product.find({ "name": new RegExp(search, 'i') }).limit(5).lean().exec();
+}
+
+module.exports.getProduct = (query) => {
+    return Product.findOne(query).lean().exec();
+}
+module.exports.getProductById = (id) =>{
+    return Product.findOne({_id: id}).lean().exec()
 }
 
 module.exports.getAllProducts = () => {
