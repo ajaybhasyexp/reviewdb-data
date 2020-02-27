@@ -7,6 +7,9 @@ module.exports.saveProduct = (product) => {
             sameProd.description = product.description;
             sameProd.imageUrl = product.imageUrl;
             sameProd.category = product.category;
+            sameProd.image_400 = product.image_400;
+            sameProd.image_800 = product.image_800;
+            sameProd.specs = product.specs;
             sameProd.maximumRetailPrice = product.maximumRetailPrice;
             sameProd.save();
             console.log(`Updating ${sameProd.name} with id ${sameProd._id}`);
@@ -25,4 +28,8 @@ module.exports.getProduct = (search) => {
 
 module.exports.getAllProducts = () => {
     return Product.find().exec();
+}
+
+module.exports.getProductById = (id) => {
+    return Product.findById(id).exec();
 }

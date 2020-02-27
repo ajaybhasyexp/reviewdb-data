@@ -22,6 +22,7 @@ const productSchema = new Schema({
     ecommerceDetails: Object,
     maximumRetailPrice: Number,
     sourceId: String,
+    specs: [String],
     updated: { type: Date, default: new Date() }
 
 });
