@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const keyValue = require('./subschemas/keyvalue');
 
 const categorySchema = new Schema({
     name: {
