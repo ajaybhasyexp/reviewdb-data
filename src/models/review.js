@@ -11,7 +11,7 @@ const reviewSchema = new Schema({
     detailedDescription: {
         type: String
     },
-    product_id: {
+    productId: {
         required: true,
         type: mongoose.Types.ObjectId,
         ref: 'Product'
@@ -22,7 +22,8 @@ const reviewSchema = new Schema({
     },
     updated: Date,
     created: Date,
-	imageUrl:String
+    imageUrl: String,
+    userSocialId: String
 
 });
 

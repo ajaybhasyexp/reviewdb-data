@@ -16,3 +16,7 @@ module.exports.checkAndSaveUser = (user) => {
 module.exports.getAllUsers = () => {
     return User.find().exec();
 }
+
+module.exports.getUser = (id) => {
+    return User.findById(id).exec();
+}
