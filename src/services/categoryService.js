@@ -18,6 +18,7 @@ module.exports.checkAndSaveCategory = (category) => {
             }
             else {
                 cat.sourceUrl = category.sourceUrl;
+                cat.name = category.name;
                 cat.updated = new Date();
                 cat.save();
             }

@@ -8,10 +8,7 @@ const categorySchema = new Schema({
     desc: {
         type: String
     },
-    attributes: {
-        type: Schema.Types.Map,
-        of: String
-    },
+    attributes: [String],
     ecommerceLinks: Object,
     source: {
         type: String, required: true
