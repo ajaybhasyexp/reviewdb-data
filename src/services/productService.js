@@ -1,4 +1,6 @@
 const Product = require('../models/product');
+const Review = require('../models/review');
+const mongoose = require('mongoose');
 
 module.exports.saveProduct = (product) => {
     Product.findOne({ sourceId: product.sourceId }).then((sameProd) => {
@@ -32,4 +34,15 @@ module.exports.getAllProducts = () => {
 
 module.exports.getProductById = (id) => {
     return Product.findById(id).exec();
+}
+
+module.exports.getAverageReview = (id) => {
+    // var avgQuery = mongoose.connection.db.collection('reviews').aggregate([{ "$match": { "productId": id } }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]);
+    // return avgQuery;
+    return Review.aggregate([{
+        $match: {
+            productId: mongoose.Types.ObjectId(id)
+        }
+    }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]).exec();
+
 }
