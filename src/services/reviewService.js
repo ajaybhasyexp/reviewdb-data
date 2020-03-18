@@ -15,3 +15,7 @@ module.exports.getReviews = () => {
 module.exports.getProductReviews = (productId) => {
     return Review.find({ productId: productId }).exec();
 }
+
+module.exports.getUserProductReview = (prodId, userId) => {
+    return Review.find({ productId: prodId, userSocialId: userId }).exec();
+}

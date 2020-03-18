@@ -37,8 +37,6 @@ module.exports.getProductById = (id) => {
 }
 
 module.exports.getAverageReview = (id) => {
-    // var avgQuery = mongoose.connection.db.collection('reviews').aggregate([{ "$match": { "productId": id } }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]);
-    // return avgQuery;
     return Review.aggregate([{
         $match: {
             productId: mongoose.Types.ObjectId(id)
