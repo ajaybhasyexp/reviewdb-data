@@ -1,6 +1,6 @@
 {
   "name": "reviewdb-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The data access layer for reviewdb to be shared between applications",
   "main": "index.js",
   "scripts": {
