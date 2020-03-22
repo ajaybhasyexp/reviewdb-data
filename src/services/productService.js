@@ -44,3 +44,8 @@ module.exports.getAverageReview = (id) => {
     }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]).exec();
 
 }
+module.exports.getProductByCategory = (categoryId,limit) => {
+    const limits=Number(limit);
+        return Product.find({ "category.categoryId":categoryId }).limit(limits).exec();
+    
+}

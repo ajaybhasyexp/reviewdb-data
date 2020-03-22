@@ -22,4 +22,4 @@ module.exports.ReviewService = ReviewService;
 
 module.exports.getEcommerceVendor = (vendor) => {
     return EComVendor.findOne({ name: vendor });
-}
+} 
