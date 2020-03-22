@@ -8,11 +8,7 @@ const reviewSchema = new Schema({
     detailedDescription: {
         type: String
     },
-    productId: {
-        required: true,
-        type: mongoose.Types.ObjectId,
-        ref: 'Product'
-    },
+    product:Object,
     rating: {
         required: true,
         type: Number
