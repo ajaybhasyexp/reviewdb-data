@@ -1,4 +1,8 @@
 const Category = require('../models/category');
+const invalidCats = ['kids_footwear', 'jewellery', 'automotive', 'home_entertainment', 'kids_clothing', 'womens_footwear',
+    'luggage_travel', 'home_improvement_tools', 'toys', 'home_furnishing', 'software', 'video_players', 'fragrances', 'tv_video_accessories',
+    'computer_storage', 'landline_phones', 'e_learning', 'network_components', 'music_movies_posters', 'furniture',
+    'sunglasses', "household_supplies", "eyewear", "womens_clothing", "home_and_kitchen_needs", "stationery_office_supplies", "home_decor_and_festive_needs"];
 
 module.exports.getAllCategories = async () => {
     return Category.find().exec();
@@ -14,7 +18,8 @@ module.exports.checkAndSaveCategory = (category) => {
     Category.findOne({ sourceId: category.sourceId, source: category.source }).then
         ((cat) => {
             if (!cat) {
-                this.saveCategory(category);
+                if (!invalidCats.includes(category.desc))
+                    this.saveCategory(category);
             }
             else {
                 cat.sourceUrl = category.sourceUrl;
