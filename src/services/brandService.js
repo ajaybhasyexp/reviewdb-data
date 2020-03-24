@@ -8,10 +8,10 @@ saveBrand = (brand) => {
 
 }
 
-module.exports.saveBrand = (brand) => {
+module.exports.checkAndSaveBrand = (brand) => {
     Brand.findOne({ name: brand.name }).then((prodBrand) => {
         if (!prodBrand) {
-            this.saveBrand(prodBrand);
+            saveBrand(prodBrand);
         } else {
             prodBrand.updated = new Date();
             prodBrand.imageUrl = brand.imageUrl;

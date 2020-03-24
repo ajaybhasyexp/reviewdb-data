@@ -23,7 +23,8 @@ const productSchema = new Schema({
     maximumRetailPrice: Number,
     sourceId: String,
     specs: [String],
-    updated: { type: Date, default: new Date() }
+    updated: { type: Date, default: new Date() },
+    brand: String
 
 });
 
