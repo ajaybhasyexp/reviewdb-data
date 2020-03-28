@@ -37,15 +37,23 @@ module.exports.getProductById = (id) => {
 }
 
 module.exports.getAverageReview = (id) => {
-    return Review.aggregate([{
-        $match: {
-            productId: mongoose.Types.ObjectId(id)
+    Review.find({ productId: mongoose.Types.ObjectId(id) }).then((prods) => {
+        if (prods && prods.length > 0) {
+            return Review.aggregate([{
+                $match: {
+                    productId: mongoose.Types.ObjectId(id)
+                }
+            }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]).exec();
+        } else {
+            return [];
         }
-    }, { $group: { _id: null, ratingavg: { $avg: "$rating" } } }]).exec();
+
+    });
+
 
 }
-module.exports.getProductByCategory = (categoryId,limit) => {
-    const limits=Number(limit);
-        return Product.find({ "category.categoryId":categoryId }).limit(limits).exec();
-    
+module.exports.getProductByCategory = (categoryId, limit) => {
+    const limits = Number(limit);
+    return Product.find({ "category.categoryId": categoryId }).limit(limits).exec();
+
 }

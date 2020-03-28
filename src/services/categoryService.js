@@ -9,13 +9,13 @@ module.exports.getAllCategories = async () => {
     return Category.find().exec();
 }
 
-module.exports.saveCategory = (category) => {
+module.exports.saveCategory = async (category) => {
     var cat = new Category(category);
     cat.updated = new Date();
     cat.save();
 }
 
-module.exports.checkAndSaveCategory = (category) => {
+module.exports.checkAndSaveCategory = async (category) => {
     Category.findOne({ sourceId: category.sourceId, source: category.source }).then
         ((cat) => {
             if (!cat) {
